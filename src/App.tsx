@@ -38,12 +38,7 @@ const Navbar = () => (
 const Hero = () => (
   <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000" 
-        alt="Lush Forest Vegetation" 
-        className="w-full h-full object-cover"
-        referrerPolicy="no-referrer"
-      />
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop')] bg-cover bg-center" />
       <div className="organic-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent opacity-80" />
     </div>
@@ -105,11 +100,9 @@ const SolutionCard = ({ title, description, icon: Icon, link, image, label, targ
     whileHover={{ y: -10 }}
     className="group relative h-[650px] overflow-hidden rounded-2xl border border-white/10"
   >
-    <img 
-      src={image} 
-      alt={title} 
-      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      referrerPolicy="no-referrer"
+    <div 
+      className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+      style={{ backgroundImage: `url(${image})` }}
     />
     <div className="organic-overlay opacity-60 group-hover:opacity-40" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent" />
@@ -164,11 +157,12 @@ const FeaturedProjects = () => (
           className="group cursor-pointer block"
         >
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
-            <img 
-              src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=1000" 
-              alt="J-Bay Zebra Lodge TerraFit Trail" 
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-              referrerPolicy="no-referrer"
+            <div 
+              className="w-full h-full bg-cover bg-center transition-all duration-700 group-hover:scale-110"
+              style={{ 
+                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2025/02/Addo-Elephant-National-Park-scaled.jpg')`,
+                minHeight: '300px'
+              }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
           </div>
@@ -191,11 +185,12 @@ const FeaturedProjects = () => (
           className="group cursor-pointer block"
         >
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
-            <img 
-              src="https://www.jangalooz.com/wp-content/uploads/2024/12/12-1024x683.jpg" 
-              alt="Jangalooz Adventure Park Pomer Croatia zip line and obstacle courses" 
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-              referrerPolicy="no-referrer"
+            <div 
+              className="w-full h-full bg-cover bg-center transition-all duration-700 group-hover:scale-110"
+              style={{ 
+                backgroundImage: `url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop')`,
+                minHeight: '300px'
+              }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
           </div>
@@ -264,11 +259,9 @@ const About = () => (
         </div>
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 relative">
-            <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000" 
-              alt="Fitness Infrastructure" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+            <div 
+              className="w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop')` }}
             />
             <div className="organic-overlay opacity-50" />
           </div>
@@ -367,7 +360,7 @@ export default function App() {
             description="Public outdoor fitness trails designed for municipalities, residential estates, and nature reserves."
             icon={Trees}
             link="https://terrafit-trail.com"
-            image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
+            image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
             targets={["Municipalities", "Estates", "Resorts", "Nature Reserves"]}
           />
           <SolutionCard 
@@ -376,7 +369,7 @@ export default function App() {
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
             icon={Mountain}
             link="https://terrafit-parks.com"
-            image="https://www.jangalooz.com/wp-content/uploads/2024/12/15-1024x683.jpg"
+            image="https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=1000&auto=format&fit=crop"
             targets={["Investors", "Tourism Operators", "Developers", "Hospitality"]}
           />
         </div>
