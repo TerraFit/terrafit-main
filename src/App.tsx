@@ -376,7 +376,7 @@ export default function App() {
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
             icon={Mountain}
             link="https://terrafit-parks.com"
-            image="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&q=80&w=1000"
+            image="https://www.jangalooz.com/wp-content/uploads/2024/12/15-1024x683.jpg"
             targets={["Investors", "Tourism Operators", "Developers", "Hospitality"]}
           />
         </div>
