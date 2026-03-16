@@ -165,7 +165,7 @@ const FeaturedProjects = () => (
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
-                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2024/10/Lodge-exterior-scaled.jpg')`,
+                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2025/02/Addo-Elephant-National-Park-scaled.jpg')`,
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
