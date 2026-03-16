@@ -165,7 +165,7 @@ const FeaturedProjects = () => (
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
-                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2025/02/Addo-Elephant-National-Park-scaled.jpg')`,
+                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2024/10/Lodge-exterior-scaled.jpg')`,
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
@@ -192,7 +192,7 @@ const FeaturedProjects = () => (
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
-                backgroundImage: `url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop')`,
+                backgroundImage: `url('https://www.jangalooz.com/wp-content/uploads/2024/12/18-1024x683.jpg')`,
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
