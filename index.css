@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-terra-green: #74A14D;
+  --color-terra-light-green: #86B55B;
+  --color-terra-dark-green: #2D4F1E;
+  --color-terra-earth: #8B4513;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0D1A0D] text-white antialiased;
+  }
+}
+
+.bg-terra-gradient {
+  background: linear-gradient(135deg, #74A14D 0%, #0D1A0D 100%);
+}
+
+.organic-overlay {
+  @apply absolute inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity duration-500;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.text-reveal {
+  @apply overflow-hidden;
+}
+
+.text-reveal span {
+  @apply inline-block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap');
