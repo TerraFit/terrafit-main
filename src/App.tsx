@@ -156,41 +156,59 @@ const FeaturedProjects = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-12">
-        {[
-          {
-            name: "Arboretum Paarl",
-            location: "Western Cape, South Africa",
-            type: "Public Fitness Trail",
-            image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=1000"
-          },
-          {
-            name: "J-Bay Zebra Lodge",
-            location: "Eastern Cape, South Africa",
-            type: "Adventure Park",
-            image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1000"
-          }
-        ].map((project, i) => (
-          <div key={i} className="group cursor-pointer">
-            <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
-              <img 
-                src={project.image} 
-                alt={project.name} 
-                className="w-full h-full object-cover transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="organic-overlay opacity-40 group-hover:opacity-20" />
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h4 className="font-display text-2xl font-bold mb-1">{project.name}</h4>
-                <p className="text-xs text-white/40 uppercase tracking-widest">{project.location}</p>
-              </div>
-              <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
-                {project.type}
-              </span>
-            </div>
+        {/* Arboretum Paarl - Public Fitness Trail */}
+        <a 
+          href="https://terrafit-trail.com/#location" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group cursor-pointer block"
+        >
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=1000" 
+              alt="Arboretum Paarl" 
+              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="organic-overlay opacity-40 group-hover:opacity-20" />
           </div>
-        ))}
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="font-display text-2xl font-bold mb-1">Arboretum Paarl</h4>
+              <p className="text-xs text-white/40 uppercase tracking-widest">Western Cape, South Africa</p>
+            </div>
+            <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
+              Public Fitness Trail
+            </span>
+          </div>
+        </a>
+
+        {/* Jangalooz Pomer Croatia - Adventure Park */}
+        <a 
+          href="https://www.jangalooz.com/en/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group cursor-pointer block"
+        >
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1000" 
+              alt="Jangalooz Pomer Croatia" 
+              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="organic-overlay opacity-40 group-hover:opacity-20" />
+          </div>
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="font-display text-2xl font-bold mb-1">Jangalooz Pomer Croatia</h4>
+              <p className="text-xs text-white/40 uppercase tracking-widest">Croatia</p>
+            </div>
+            <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
+              Adventure Park
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
