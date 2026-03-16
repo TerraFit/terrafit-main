@@ -192,7 +192,7 @@ const FeaturedProjects = () => (
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
-                backgroundImage: `url('https://www.jangalooz.com/wp-content/uploads/2024/12/12-1024x683.jpg')`,
+                backgroundImage: `url('https://www.jangalooz.com/wp-content/uploads/2025/03/DSCF0235.jpg')`,
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
@@ -372,7 +372,7 @@ export default function App() {
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
             icon={Mountain}
             link="https://terrafit-parks.com"
-            image="https://www.jangalooz.com/wp-content/uploads/2024/12/15-1024x683.jpg"
+            image="https://www.jangalooz.com/wp-content/uploads/2025/03/DSCF0167.jpg"
             targets={["Investors", "Tourism Operators", "Developers", "Hospitality"]}
           />
         </div>
