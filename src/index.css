@@ -20,7 +20,11 @@
 }
 
 .organic-overlay {
-  @apply absolute inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity duration-500;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45, 90, 39, 0.2) 0%, transparent 100%);
+  pointer-events: none;
+  transition: opacity 0.5s;
 }
 
 .glass-card {
