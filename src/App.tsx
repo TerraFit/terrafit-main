@@ -282,7 +282,7 @@ const About = () => (
 
 const Contact = () => (
   <section id="contact" className="py-32 bg-terra-green/10">
-      <div className="max-w-3xl mx-auto px-6 text-center">
+    <div className="max-w-3xl mx-auto px-6 text-center">
       <div className="w-20 h-20 bg-terra-green rounded-full flex items-center justify-center mx-auto mb-10 border border-white/10">
         <Mail size={32} className="text-white" />
       </div>
@@ -291,10 +291,10 @@ const Contact = () => (
         Inquire about TerraFit infrastructure for your municipality, estate, or tourism destination.
       </p>
       <a 
-        href="mailto:inquiry@terrafit.co.za" 
+        href="mailto:inquiry@aemaragroup.com" 
         className="inline-block px-12 py-6 bg-terra-green text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-terra-light-green transition-all hover:scale-105"
       >
-        inquiry@terrafit.co.za
+        INQUIRE NOW
       </a>
     </div>
   </section>
