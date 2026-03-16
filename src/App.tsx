@@ -38,7 +38,12 @@ const Navbar = () => (
 const Hero = () => (
   <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop')] bg-cover bg-center" />
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop')",
+        }}
+      />
       <div className="organic-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent opacity-80" />
     </div>
@@ -156,12 +161,11 @@ const FeaturedProjects = () => (
           rel="noopener noreferrer"
           className="group cursor-pointer block"
         >
-          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
             <div 
-              className="w-full h-full bg-cover bg-center transition-all duration-700 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
                 backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2025/02/Addo-Elephant-National-Park-scaled.jpg')`,
-                minHeight: '300px'
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
@@ -184,12 +188,11 @@ const FeaturedProjects = () => (
           rel="noopener noreferrer"
           className="group cursor-pointer block"
         >
-          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
             <div 
-              className="w-full h-full bg-cover bg-center transition-all duration-700 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
                 backgroundImage: `url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop')`,
-                minHeight: '300px'
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
@@ -260,7 +263,7 @@ const About = () => (
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 relative">
             <div 
-              className="w-full h-full bg-cover bg-center"
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop')` }}
             />
             <div className="organic-overlay opacity-50" />
