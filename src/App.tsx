@@ -276,7 +276,7 @@ const About = () => (
             <p className="text-sm italic text-white/80 mb-4">
               "Our mission is to redefine how communities interact with outdoor spaces through intelligent infrastructure."
             </p>
-            <p className="text-[10px] uppercase tracking-widest font-bold text-terra-green">Aemara Group Leadership</p>
+            <p className="text-[10px] uppercase tracking-widest font-bold text-terra-green">Didier Duc, Founder & CEO</p>
           </div>
         </div>
       </div>
@@ -309,12 +309,12 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid md:grid-cols-4 gap-12 mb-20">
         <div className="col-span-2">
-          <div className="flex items-center gap-3 mb-6">
+          <a href="/" className="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-terra-green flex items-center justify-center rounded-[10px]">
               <span className="text-white font-bold text-sm tracking-tighter leading-none">TF</span>
             </div>
             <span className="font-display font-bold text-xl tracking-tight uppercase">TerraFit</span>
-          </div>
+          </a>
           <p className="text-white/40 max-w-sm text-sm leading-relaxed">
             Global leaders in outdoor fitness and adventure infrastructure. Part of the Aemara Group ecosystem.
           </p>
@@ -376,7 +376,7 @@ export default function App() {
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
             icon={Mountain}
             link="https://terrafit-parks.com"
-            image="/api/attachments/7350f968-07b9-470a-8610-d73188547f63"
+            image="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&q=80&w=1000"
             targets={["Investors", "Tourism Operators", "Developers", "Hospitality"]}
           />
         </div>
