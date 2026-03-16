@@ -156,7 +156,7 @@ const FeaturedProjects = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Arboretum Paarl - Public Fitness Trail */}
+        {/* J-Bay Zebra Lodge - Public Fitness Trail */}
         <a 
           href="https://terrafit-trail.com/#location" 
           target="_blank" 
@@ -166,7 +166,7 @@ const FeaturedProjects = () => (
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
             <img 
               src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=1000" 
-              alt="Arboretum Paarl" 
+              alt="J-Bay Zebra Lodge TerraFit Trail" 
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
               referrerPolicy="no-referrer"
             />
@@ -174,8 +174,8 @@ const FeaturedProjects = () => (
           </div>
           <div className="flex justify-between items-start">
             <div>
-              <h4 className="font-display text-2xl font-bold mb-1">Arboretum Paarl</h4>
-              <p className="text-xs text-white/40 uppercase tracking-widest">Western Cape, South Africa</p>
+              <h4 className="font-display text-2xl font-bold mb-1">J-Bay Zebra Lodge</h4>
+              <p className="text-xs text-white/40 uppercase tracking-widest">Eastern Cape, South Africa</p>
             </div>
             <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
               Public Fitness Trail
@@ -192,8 +192,8 @@ const FeaturedProjects = () => (
         >
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
             <img 
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1000" 
-              alt="Jangalooz Pomer Croatia" 
+              src="https://www.jangalooz.com/wp-content/uploads/2024/12/12-1024x683.jpg" 
+              alt="Jangalooz Adventure Park Pomer Croatia zip line and obstacle courses" 
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
               referrerPolicy="no-referrer"
             />
