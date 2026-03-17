@@ -154,7 +154,7 @@ const FeaturedProjects = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-12">
-        {/* J-Bay Zebra Lodge - Public Fitness Trail */}
+        {/* J-Bay Zebra Lodge - Public Fitness Trail - USING LOCAL IMAGE */}
         <a 
           href="https://terrafit-trail.com/#location" 
           target="_blank" 
@@ -165,7 +165,7 @@ const FeaturedProjects = () => (
             <div 
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ 
-                backgroundImage: `url('https://jbayzebralodge.co.za/wp-content/uploads/2025/02/Addo-Elephant-National-Park-scaled.jpg')`,
+                backgroundImage: `url('/terrafit-trail-jbay-zebra-lodge.png')`,
               }}
             />
             <div className="organic-overlay opacity-40 group-hover:opacity-20" />
@@ -326,7 +326,7 @@ const Footer = () => (
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-terra-green mb-6">Corporate</h4>
           <ul className="space-y-4 text-sm text-white/40">
             <li><a href="#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
-            <li><a href="mailto:inquiry@terrafit.co.za" className="hover:text-terra-green transition-colors">Contact</a></li>
+            <li><a href="mailto:inquiry@aemaragroup.com" className="hover:text-terra-green transition-colors">Contact</a></li>
             <li><a href="#" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
