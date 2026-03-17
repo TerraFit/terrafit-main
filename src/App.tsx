@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { 
   ArrowRight, 
   Trees, 
@@ -16,6 +17,7 @@ import {
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5">
@@ -27,9 +29,9 @@ const Navbar = () => (
         <span className="font-display font-bold text-2xl tracking-tight uppercase">TerraFit</span>
       </a>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase opacity-70">
-        <a href="#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
-        <a href="#about" className="hover:opacity-100 transition-opacity">About</a>
-        <a href="#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
+        <a href="/#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
+        <a href="/#about" className="hover:opacity-100 transition-opacity">About</a>
+        <a href="/#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
       </div>
     </div>
   </nav>
@@ -67,7 +69,7 @@ const Hero = () => (
           We design and develop world-class outdoor fitness and adrenaline adventure environments that blend seamlessly into natural landscapes.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a href="#solutions" className="px-8 py-4 bg-terra-green text-white font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-terra-light-green transition-all shadow-lg shadow-terra-green/20">
+          <a href="/#solutions" className="px-8 py-4 bg-terra-green text-white font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-terra-light-green transition-all shadow-lg shadow-terra-green/20">
             Explore Solutions <ArrowRight size={16} />
           </a>
         </div>
@@ -325,9 +327,9 @@ const Footer = () => (
         <div>
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-terra-green mb-6">Corporate</h4>
           <ul className="space-y-4 text-sm text-white/40">
-            <li><a href="#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
+            <li><a href="/#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
             <li><a href="mailto:inquiry@aemaragroup.com" className="hover:text-terra-green transition-colors">Contact</a></li>
-            <li><a href="#" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
+            <li><a href="/privacy-policy" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -339,7 +341,7 @@ const Footer = () => (
   </footer>
 );
 
-export default function App() {
+function HomePage() {
   return (
     <div className="font-sans">
       <Navbar />
@@ -384,5 +386,16 @@ export default function App() {
       <Contact />
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
