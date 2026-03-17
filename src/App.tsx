@@ -154,7 +154,7 @@ const FeaturedProjects = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-12">
-        {/* J-Bay Zebra Lodge - Public Fitness Trail - USING LOCAL IMAGE */}
+        {/* J-Bay Zebra Lodge - Public Fitness Trail - USING LOCAL IMAGE FROM PUBLIC FOLDER */}
         <a 
           href="https://terrafit-trail.com/#location" 
           target="_blank" 
