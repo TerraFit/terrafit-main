@@ -1,3 +1,4 @@
+// src/App.tsx (updated)
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -5,6 +6,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { 
   ArrowRight, 
   Trees, 
@@ -16,20 +18,23 @@ import {
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Team from './pages/Team';
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5">
     <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-3">
+      <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <div className="w-10 h-10 bg-terra-green flex items-center justify-center rounded-[12px] shadow-lg shadow-terra-green/20">
           <span className="text-white font-bold text-lg tracking-tighter leading-none">TF</span>
         </div>
         <span className="font-display font-bold text-2xl tracking-tight uppercase">TerraFit</span>
-      </div>
+      </a>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase opacity-70">
-        <a href="#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
-        <a href="#about" className="hover:opacity-100 transition-opacity">About</a>
-        <a href="#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
+        <a href="/#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
+        <a href="/#about" className="hover:opacity-100 transition-opacity">About</a>
+        <a href="/team" className="hover:opacity-100 transition-opacity">Team</a>
+        <a href="/#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
       </div>
     </div>
   </nav>
@@ -38,11 +43,11 @@ const Navbar = () => (
 const Hero = () => (
   <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000" 
-        alt="Lush Forest Vegetation" 
-        className="w-full h-full object-cover"
-        referrerPolicy="no-referrer"
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop')",
+        }}
       />
       <div className="organic-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent opacity-80" />
@@ -67,7 +72,7 @@ const Hero = () => (
           We design and develop world-class outdoor fitness and adrenaline adventure environments that blend seamlessly into natural landscapes.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a href="#solutions" className="px-8 py-4 bg-terra-green text-white font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-terra-light-green transition-all shadow-lg shadow-terra-green/20">
+          <a href="/#solutions" className="px-8 py-4 bg-terra-green text-white font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-terra-light-green transition-all shadow-lg shadow-terra-green/20">
             Explore Solutions <ArrowRight size={16} />
           </a>
         </div>
@@ -105,11 +110,9 @@ const SolutionCard = ({ title, description, icon: Icon, link, image, label, targ
     whileHover={{ y: -10 }}
     className="group relative h-[650px] overflow-hidden rounded-2xl border border-white/10"
   >
-    <img 
-      src={image} 
-      alt={title} 
-      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      referrerPolicy="no-referrer"
+    <div 
+      className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+      style={{ backgroundImage: `url(${image})` }}
     />
     <div className="organic-overlay opacity-60 group-hover:opacity-40" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent" />
@@ -156,41 +159,59 @@ const FeaturedProjects = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-12">
-        {[
-          {
-            name: "Arboretum Paarl",
-            location: "Western Cape, South Africa",
-            type: "Public Fitness Trail",
-            image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=1000"
-          },
-          {
-            name: "J-Bay Zebra Lodge",
-            location: "Eastern Cape, South Africa",
-            type: "Adventure Park",
-            image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1000"
-          }
-        ].map((project, i) => (
-          <div key={i} className="group cursor-pointer">
-            <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative">
-              <img 
-                src={project.image} 
-                alt={project.name} 
-                className="w-full h-full object-cover transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="organic-overlay opacity-40 group-hover:opacity-20" />
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h4 className="font-display text-2xl font-bold mb-1">{project.name}</h4>
-                <p className="text-xs text-white/40 uppercase tracking-widest">{project.location}</p>
-              </div>
-              <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
-                {project.type}
-              </span>
-            </div>
+        {/* J-Bay Zebra Lodge - Public Fitness Trail - USING LOCAL IMAGE FROM PUBLIC FOLDER */}
+        <a 
+          href="https://terrafit-trail.com/#location" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group cursor-pointer block"
+        >
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
+            <div 
+              className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{ 
+                backgroundImage: `url('/terrafit-trail-jbay-zebra-lodge.png')`,
+              }}
+            />
+            <div className="organic-overlay opacity-40 group-hover:opacity-20" />
           </div>
-        ))}
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="font-display text-2xl font-bold mb-1">J-Bay Zebra Lodge</h4>
+              <p className="text-xs text-white/40 uppercase tracking-widest">Eastern Cape, South Africa</p>
+            </div>
+            <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
+              Public Fitness Trail
+            </span>
+          </div>
+        </a>
+
+        {/* Jangalooz Pomer Croatia - Adventure Park */}
+        <a 
+          href="https://www.jangalooz.com/en/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group cursor-pointer block"
+        >
+          <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
+            <div 
+              className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{ 
+                backgroundImage: `url('https://www.jangalooz.com/wp-content/uploads/2025/03/DSCF0235.jpg')`,
+              }}
+            />
+            <div className="organic-overlay opacity-40 group-hover:opacity-20" />
+          </div>
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="font-display text-2xl font-bold mb-1">Jangalooz Pomer Croatia</h4>
+              <p className="text-xs text-white/40 uppercase tracking-widest">Croatia</p>
+            </div>
+            <span className="px-3 py-1 bg-terra-green/10 border border-terra-green/20 rounded-full text-[9px] uppercase tracking-widest font-bold text-terra-green">
+              Adventure Park
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -246,11 +267,9 @@ const About = () => (
         </div>
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 relative">
-            <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000" 
-              alt="Fitness Infrastructure" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+            <div 
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop')` }}
             />
             <div className="organic-overlay opacity-50" />
           </div>
@@ -258,7 +277,7 @@ const About = () => (
             <p className="text-sm italic text-white/80 mb-4">
               "Our mission is to redefine how communities interact with outdoor spaces through intelligent infrastructure."
             </p>
-            <p className="text-[10px] uppercase tracking-widest font-bold text-terra-green">Aemara Group Leadership</p>
+            <p className="text-[10px] uppercase tracking-widest font-bold text-terra-green">Didier Duc, Founder & CEO</p>
           </div>
         </div>
       </div>
@@ -268,7 +287,7 @@ const About = () => (
 
 const Contact = () => (
   <section id="contact" className="py-32 bg-terra-green/10">
-      <div className="max-w-3xl mx-auto px-6 text-center">
+    <div className="max-w-3xl mx-auto px-6 text-center">
       <div className="w-20 h-20 bg-terra-green rounded-full flex items-center justify-center mx-auto mb-10 border border-white/10">
         <Mail size={32} className="text-white" />
       </div>
@@ -277,10 +296,10 @@ const Contact = () => (
         Inquire about TerraFit infrastructure for your municipality, estate, or tourism destination.
       </p>
       <a 
-        href="mailto:inquiry@terrafit.co.za" 
+        href="mailto:inquiry@aemaragroup.com" 
         className="inline-block px-12 py-6 bg-terra-green text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-terra-light-green transition-all hover:scale-105"
       >
-        inquiry@terrafit.co.za
+        INQUIRE NOW
       </a>
     </div>
   </section>
@@ -291,12 +310,12 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid md:grid-cols-4 gap-12 mb-20">
         <div className="col-span-2">
-          <div className="flex items-center gap-3 mb-6">
+          <a href="/" className="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-terra-green flex items-center justify-center rounded-[10px]">
               <span className="text-white font-bold text-sm tracking-tighter leading-none">TF</span>
             </div>
             <span className="font-display font-bold text-xl tracking-tight uppercase">TerraFit</span>
-          </div>
+          </a>
           <p className="text-white/40 max-w-sm text-sm leading-relaxed">
             Global leaders in outdoor fitness and adventure infrastructure. Part of the Aemara Group ecosystem.
           </p>
@@ -311,9 +330,10 @@ const Footer = () => (
         <div>
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-terra-green mb-6">Corporate</h4>
           <ul className="space-y-4 text-sm text-white/40">
-            <li><a href="#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
-            <li><a href="mailto:inquiry@terrafit.co.za" className="hover:text-terra-green transition-colors">Contact</a></li>
-            <li><a href="#" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
+            <li><a href="/#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
+            <li><a href="/team" className="hover:text-terra-green transition-colors">Our Team</a></li>
+            <li><a href="mailto:inquiry@aemaragroup.com" className="hover:text-terra-green transition-colors">Contact</a></li>
+            <li><a href="/privacy-policy" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -325,7 +345,7 @@ const Footer = () => (
   </footer>
 );
 
-export default function App() {
+function HomePage() {
   return (
     <div className="font-sans">
       <Navbar />
@@ -349,7 +369,7 @@ export default function App() {
             description="Public outdoor fitness trails designed for municipalities, residential estates, and nature reserves."
             icon={Trees}
             link="https://terrafit-trail.com"
-            image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
+            image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
             targets={["Municipalities", "Estates", "Resorts", "Nature Reserves"]}
           />
           <SolutionCard 
@@ -358,7 +378,7 @@ export default function App() {
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
             icon={Mountain}
             link="https://terrafit-parks.com"
-            image="/api/attachments/7350f968-07b9-470a-8610-d73188547f63"
+            image="https://www.jangalooz.com/wp-content/uploads/2025/03/DSCF0167.jpg"
             targets={["Investors", "Tourism Operators", "Developers", "Hospitality"]}
           />
         </div>
@@ -370,5 +390,17 @@ export default function App() {
       <Contact />
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/team" element={<Team />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
