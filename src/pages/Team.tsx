@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { MapPin, Building2, Lightbulb, Cog, Users, Leaf, Mail, Linkedin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
