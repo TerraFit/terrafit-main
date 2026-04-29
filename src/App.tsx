@@ -6,19 +6,19 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Trees, 
-  Mountain, 
-  Map, 
-  Shield, 
-  Globe, 
-  Mail, 
+import {
+  ArrowRight,
+  Trees,
+  Mountain,
+  Map,
+  Shield,
+  Globe,
+  Mail,
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import Team from './pages/Team';  // <-- ADD THIS LINE
+import Team from './pages/Team';
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5">
@@ -32,7 +32,7 @@ const Navbar = () => (
       <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase opacity-70">
         <a href="/#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
         <a href="/#about" className="hover:opacity-100 transition-opacity">About</a>
-        <a href="/team" className="hover:opacity-100 transition-opacity">Team</a>  // <-- ADD THIS LINE
+        <a href="/team" className="hover:opacity-100 transition-opacity">Team</a>
         <a href="/#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
       </div>
     </div>
@@ -42,18 +42,18 @@ const Navbar = () => (
 const Hero = () => (
   <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ 
+        style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop')",
         }}
       />
       <div className="organic-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent opacity-80" />
     </div>
-    
+
     <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col justify-center">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -105,17 +105,17 @@ const Hero = () => (
 );
 
 const SolutionCard = ({ title, description, icon: Icon, link, image, label, targets }: any) => (
-  <motion.div 
+  <motion.div
     whileHover={{ y: -10 }}
     className="group relative h-[650px] overflow-hidden rounded-2xl border border-white/10"
   >
-    <div 
+    <div
       className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
       style={{ backgroundImage: `url(${image})` }}
     />
     <div className="organic-overlay opacity-60 group-hover:opacity-40" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A0D] via-transparent to-transparent" />
-    
+
     <div className="absolute inset-0 p-10 flex flex-col justify-end">
       <div className="mb-6 w-12 h-12 bg-terra-green/20 backdrop-blur-md rounded-full flex items-center justify-center border border-terra-green/30">
         <Icon size={24} className="text-white" />
@@ -125,7 +125,7 @@ const SolutionCard = ({ title, description, icon: Icon, link, image, label, targ
       <p className="text-white/80 mb-6 max-w-sm leading-relaxed">
         {description}
       </p>
-      
+
       <div className="mb-8">
         <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mb-3">Target Sectors</p>
         <div className="flex flex-wrap gap-2">
@@ -137,9 +137,9 @@ const SolutionCard = ({ title, description, icon: Icon, link, image, label, targ
         </div>
       </div>
 
-      <a 
-        href={link} 
-        target="_blank" 
+      <a
+        href={link}
+        target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest group-hover:gap-4 transition-all text-white"
       >
@@ -156,19 +156,18 @@ const FeaturedProjects = () => (
         <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-terra-green mb-4 block">Case Studies</span>
         <h2 className="font-display text-5xl font-bold">Flagship Deployments.</h2>
       </div>
-      
+
       <div className="grid md:grid-cols-2 gap-12">
-        {/* J-Bay Zebra Lodge - Public Fitness Trail - USING LOCAL IMAGE FROM PUBLIC FOLDER */}
-        <a 
-          href="https://terrafit-trail.com/#location" 
-          target="_blank" 
+        <a
+          href="https://terrafit-trail.com/#location"
+          target="_blank"
           rel="noopener noreferrer"
           className="group cursor-pointer block"
         >
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
-            <div 
+            <div
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ 
+              style={{
                 backgroundImage: `url('/terrafit-trail-jbay-zebra-lodge.png')`,
               }}
             />
@@ -185,17 +184,16 @@ const FeaturedProjects = () => (
           </div>
         </a>
 
-        {/* Jangalooz Pomer Croatia - Adventure Park */}
-        <a 
-          href="https://www.jangalooz.com/en/" 
-          target="_blank" 
+        <a
+          href="https://www.jangalooz.com/en/"
+          target="_blank"
           rel="noopener noreferrer"
           className="group cursor-pointer block"
         >
           <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 relative" style={{ minHeight: '300px' }}>
-            <div 
+            <div
               className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ 
+              style={{
                 backgroundImage: `url('https://www.jangalooz.com/wp-content/uploads/2025/03/DSCF0235.jpg')`,
               }}
             />
@@ -266,7 +264,7 @@ const About = () => (
         </div>
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 relative">
-            <div 
+            <div
               className="absolute inset-0 w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop')` }}
             />
@@ -294,8 +292,8 @@ const Contact = () => (
       <p className="text-xl text-white/60 mb-12">
         Inquire about TerraFit infrastructure for your municipality, estate, or tourism destination.
       </p>
-      <a 
-        href="mailto:inquiry@aemaragroup.com" 
+      <a
+        href="mailto:inquiry@aemaragroup.com"
         className="inline-block px-12 py-6 bg-terra-green text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-terra-light-green transition-all hover:scale-105"
       >
         INQUIRE NOW
@@ -349,7 +347,7 @@ function HomePage() {
     <div className="font-sans">
       <Navbar />
       <Hero />
-      
+
       <section id="solutions" className="py-32 max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
@@ -360,9 +358,9 @@ function HomePage() {
             We provide specialized solutions for both public infrastructure and commercial adventure destinations.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
-          <SolutionCard 
+          <SolutionCard
             title="TerraFit Trails"
             label="Public Infrastructure"
             description="Public outdoor fitness trails designed for municipalities, residential estates, and nature reserves."
@@ -371,7 +369,7 @@ function HomePage() {
             image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
             targets={["Municipalities", "Estates", "Resorts", "Nature Reserves"]}
           />
-          <SolutionCard 
+          <SolutionCard
             title="TerraFit Parks"
             label="Commercial Destinations"
             description="Treetop & Adrenaline Adventure Parks engineered for tourism destinations, commercial operators, and hospitality groups."
@@ -398,7 +396,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/team" element={<Team />} />  // <-- ADD THIS LINE
+        <Route path="/team" element={<Team />} />
       </Routes>
     </BrowserRouter>
   );
