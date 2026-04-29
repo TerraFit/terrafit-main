@@ -9,6 +9,26 @@ import { motion } from 'framer-motion';
 import { MapPin, Building2, Lightbulb, Cog, Users, Leaf, Mail, Linkedin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Navbar component (copied from App.tsx)
+const Navbar = () => (
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5">
+    <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <div className="w-10 h-10 bg-terra-green flex items-center justify-center rounded-[12px] shadow-lg shadow-terra-green/20">
+          <span className="text-white font-bold text-lg tracking-tighter leading-none">TF</span>
+        </div>
+        <span className="font-display font-bold text-2xl tracking-tight uppercase">TerraFit</span>
+      </a>
+      <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase opacity-70">
+        <a href="/#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
+        <a href="/#about" className="hover:opacity-100 transition-opacity">About</a>
+        <a href="/team" className="hover:opacity-100 transition-opacity">Team</a>
+        <a href="/#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
+      </div>
+    </div>
+  </nav>
+);
+
 const team = [
   {
     name: "Didier Duc",
@@ -42,17 +62,6 @@ const team = [
   }
 ];
 
-const advisors = [
-  {
-    name: "Industry Advisory Board",
-    members: [
-      { name: "Sarah Nkosi", title: "Tourism Development Expert", region: "Cape Town, SA" },
-      { name: "Dr. James Omondi", title: "Sustainable Design Specialist", region: "Nairobi, Kenya" },
-      { name: "Elena Varga", title: "European Safety Standards", region: "Ljubljana, Slovenia" }
-    ]
-  }
-];
-
 const pillars = [
   {
     icon: Lightbulb,
@@ -78,9 +87,11 @@ const pillars = [
 
 export default function Team() {
   return (
-    <div className="pt-20">
+    <div>
+      <Navbar />  {/* THIS ADDS THE NAVIGATION MENU */}
+      
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      <section className="pt-32 pb-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
@@ -222,48 +233,6 @@ export default function Team() {
           </div>
         </div>
       </section>
-
-      {/* Advisory Board 
-      <section className="py-24 bg-[#0D1A0D]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-terra-green font-semibold text-sm uppercase tracking-wider">Expert Guidance</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">
-              Advisory Board
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Our team is supported by an esteemed group of industry experts
-            </p>
-          </motion.div>
-
-          {advisors.map((group) => (
-            <div key={group.name} className="grid md:grid-cols-3 gap-6">
-              {group.members.map((member, idx) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/5"
-                >
-                  <div className="w-16 h-16 mx-auto bg-terra-green/10 rounded-full flex items-center justify-center mb-4 border border-terra-green/20">
-                    <span className="text-terra-green text-xl font-bold">{member.name.charAt(0)}</span>
-                  </div>
-                  <h3 className="font-semibold text-white mb-1">{member.name}</h3>
-                  <p className="text-terra-green text-sm mb-2">{member.title}</p>
-                  <p className="text-white/40 text-xs">{member.region}</p>
-                </motion.div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* Join CTA */}
       <section className="py-24 bg-gradient-to-br from-terra-dark-green via-terra-green to-terra-light-green">
