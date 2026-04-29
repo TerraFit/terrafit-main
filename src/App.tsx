@@ -18,6 +18,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Team from './pages/Team';  // <-- ADD THIS LINE
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5">
@@ -31,6 +32,7 @@ const Navbar = () => (
       <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase opacity-70">
         <a href="/#solutions" className="hover:opacity-100 transition-opacity">Solutions</a>
         <a href="/#about" className="hover:opacity-100 transition-opacity">About</a>
+        <a href="/team" className="hover:opacity-100 transition-opacity">Team</a>  // <-- ADD THIS LINE
         <a href="/#contact" className="px-5 py-2 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">Contact</a>
       </div>
     </div>
@@ -328,6 +330,7 @@ const Footer = () => (
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-terra-green mb-6">Corporate</h4>
           <ul className="space-y-4 text-sm text-white/40">
             <li><a href="/#about" className="hover:text-terra-green transition-colors">Aemara Group</a></li>
+            <li><a href="/team" className="hover:text-terra-green transition-colors">Our Team</a></li>
             <li><a href="mailto:inquiry@aemaragroup.com" className="hover:text-terra-green transition-colors">Contact</a></li>
             <li><a href="/privacy-policy" className="hover:text-terra-green transition-colors">Privacy Policy</a></li>
           </ul>
@@ -395,6 +398,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/team" element={<Team />} />  // <-- ADD THIS LINE
       </Routes>
     </BrowserRouter>
   );
